@@ -1,6 +1,13 @@
 FROM docker.io/python:3.10
 
 RUN pip install django 
-COPY mysite /mysite 
+COPY mysite /mysite
+COPY ./entrypoint.sh /
+ENV SECRET_KEY=django-super-secret-key \
+    USERNAME=student \
+    EMAIL=student@cis.cabrillo.edu \
+    PASSWORD=Cabri11o
+
+RUN chmod +x entrypoint.sh 
 WORKDIR /mysite 
-CMD python ./manage.py runserver 0.0.0.0:8000
+ENTRYPOINT ["/entrypoint.sh"]
