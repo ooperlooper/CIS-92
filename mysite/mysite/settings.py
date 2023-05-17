@@ -21,7 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-@o71s+_^+tm0*33j7gv3xrjjtue5)z55sjg40urg(7pu*8kl)5'
-
+DJANGO_SUPERUSER_USERNAME = os.environ['USERNAME']
+DJANGO_SUPERUSER_EMAIL = os.environ['EMAIL']
+DJANGO_SUPERUSER_PASSWORD = os.environ['PASSWORD']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -122,7 +124,3 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = ['https://*.cloudshell.dev']
-
-DJANGO_SUPERUSER_USERNAME =os.environ['USERNAME']
-DJANGO_SUPERUSER_EMAIL = os.environ['EMAIL']
-DJANGO_SUPERUSER_PASSWORD = os.environ['PASSWORD']
