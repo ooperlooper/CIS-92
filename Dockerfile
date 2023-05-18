@@ -7,7 +7,8 @@ COPY ./entrypoint.sh /
 ENV SECRET_KEY=django-super-secret-key \
     USERNAME=student \
     EMAIL=student@cis.cabrillo.edu \
-    PASSWORD=Cabri11o
+    PASSWORD=Cabri11o \
+    PORT=8080
 RUN chmod +x entrypoint.sh 
 WORKDIR /mysite 
 ENTRYPOINT ["/entrypoint.sh"]
