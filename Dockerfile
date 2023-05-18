@@ -1,7 +1,7 @@
 FROM docker.io/python:3.10
 
 RUN pip install django
-EXPOSE ${PORT}
+EXPOSE $PORT
 COPY mysite /mysite
 COPY ./entrypoint.sh /
 ENV SECRET_KEY=django-super-secret-key \
