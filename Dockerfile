@@ -4,8 +4,8 @@ RUN pip install django
 COPY mysite /mysite
 COPY ./entrypoint.sh /
 RUN chmod +x entrypoint.sh
+WORKDIR /mysite
 ENV PORT=$PORT
 ENV SECRET_KEY=$SECRET_KEY
-WORKDIR /mysite
 EXPOSE $PORT
 ENTRYPOINT ["/entrypoint.sh"]
