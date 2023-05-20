@@ -21,9 +21,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
-DJANGO_SUPERUSER_USERNAME = os.environ['USERNAME']
-DJANGO_SUPERUSER_EMAIL = os.environ['EMAIL']
-DJANGO_SUPERUSER_PASSWORD = os.environ['PASSWORD']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
