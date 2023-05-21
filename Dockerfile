@@ -6,7 +6,7 @@ COPY ./entrypoint.sh /
 RUN chmod +x entrypoint.sh
 WORKDIR /mysite
 ENV PORT=$PORT \
-    SECRET_KEY=$SECRET_KEY \
+    SECRET_KEY=key \
     ANAME=$ANAME \
     AEMAIL=$AEMAIL \
     APASS=$APASS 
