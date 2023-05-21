@@ -1,6 +1,8 @@
 FROM docker.io/python:3.10
 
 RUN pip install django
+RUN pip install psycopg2-binary
+
 COPY mysite /mysite
 COPY ./entrypoint.sh /
 RUN chmod +x entrypoint.sh
