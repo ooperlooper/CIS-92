@@ -9,12 +9,6 @@ spec:
   containers:
   - name: httpd
     image: ghcr.io/ooperlooper/cis-92:milestone-4.2.0
-    livenessProbe:
-      httpGet:
-        path: /polls/
-        port: 80
-      initialDelaySeconds: 30
-      periodSeconds: 30
     ports:
     - containerPort: 80
     env:
@@ -28,6 +22,7 @@ spec:
       value: "Cabri11o"
     - name: PORT
       value: "80"
+
 
 
 
