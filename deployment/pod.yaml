@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysite-pod
+  labels:
+    function: webserver
+    class: cis-92
+spec:
+  containers:
+  - name: httpd
+    image: ghcr.io/ooperlooper/cis-92:milestone-4.2.0
+    livenessProbe:
+      httpGet:
+        path: /polls/
+        port: 80
+      initialDelaySeconds: 30
+      periodSeconds: 30
+    ports:
+    - containerPort: 80
+    env:
+    - name: SECRET_KEY
+      value: "bruhhhhhhhh"
+    - name: ANAME
+      value: "student"
+    - name: AEMAIL
+      value: "student@cabrillo.edu"
+    - name: APASS
+      value: "Cabri11o"
+    - name: PORT
+      value: "80"
+
+
+
+
+
+
