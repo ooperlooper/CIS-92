@@ -8,20 +8,33 @@ metadata:
 spec:
   containers:
   - name: httpd
-    image: ghcr.io/ooperlooper/cis-92:milestone-4.2.0
+    image: ghcr.io/ooperlooper/cis-92:milestone-5.0
+    resources:
+      limits:
+        cpu: 500m 
+        memory: 512Mi
+        ephemeral-storage: 10M
+    livenessProbe:
+      httpGet:
+        path: /polls/
+        port: 80
+      initialDelaySeconds: 30
+      periodSeconds: 30
     ports:
     - containerPort: 80
     env:
     - name: SECRET_KEY
-      value: "bruhhhhhhhh"
-    - name: ANAME
-      value: "student"
-    - name: AEMAIL
-      value: "student@cabrillo.edu"
-    - name: APASS
-      value: "Cabri11o"
+      value: "blahblah"
     - name: PORT
       value: "80"
+    - name: DB_NAME
+      value: "mysite"     
+    - name: DB_USER
+      value: "postgres"   
+    - name: DB_PASSWORD
+      value: "django"      
+    - name: DB_HOST
+      value: "postgres"
 
 
 
